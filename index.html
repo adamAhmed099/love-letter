@@ -52,7 +52,7 @@
       border-radius: 15px;
     }
 
-    /* القلوب */
+    /* القلوب الطايرة */
     .heart {
       position: absolute;
       color: red;
@@ -86,11 +86,17 @@
     </p>
   </div>
 
-  <audio autoplay loop>
+  <audio id="music" loop>
     <source src="TUL8TE - El Hob Gany I تووليت - الحب جاني.mp3" type="audio/mpeg">
   </audio>
 
   <script>
+    // تشغيل الموسيقى عند أول ضغطة
+    const music = document.getElementById('music');
+    document.body.addEventListener('click', () => {
+      music.play();
+    }, { once: true });
+
     // إنشاء القلوب الطايرة
     function createHeart() {
       const heart = document.createElement('div');
